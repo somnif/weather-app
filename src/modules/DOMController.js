@@ -5,17 +5,12 @@ const DOMController = () => {
   const weatherResult = document.getElementById("weather-result");
   const searchBar = document.getElementById("location");
   const searchButton = document.getElementById("get-location");
+  const img = document.querySelector(".container > div > img");
 
   searchButton.addEventListener("click", (e) => {
     e.preventDefault();
     loadNewWeather();
   });
-
-  const createElement = ({ element, classNames = "", innerText = "" }) => {
-    const newElement = document.createElement(element);
-    newElement.innerText = innerText;
-    newElement.className = classNames;
-  };
 
   const loadNewWeather = async () => {
     locationResult.innerText = "Loading new weather";
